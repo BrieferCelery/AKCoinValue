@@ -14,10 +14,11 @@ namespace AKCoinValue
     {
         private const string Symbol = "btc";
         private const string Url = "https://api.coinmarketcap.com/v1/ticker/";
-        public const string ConnectionString = "DefaultEndpointsProtocol=https;AccountName=akcoinvalue;AccountKey=kdogAVznwvQ4Qgk4Jul9CIf+T8IeCls9Nc8N1iJe/hk4+I0grstMoUqsHz7DW2hW4VIUfztHmv/Ir+HJsc0Y1A==;BlobEndpoint=https://akcoinvalue.blob.core.windows.net/;QueueEndpoint=https://akcoinvalue.queue.core.windows.net/;TableEndpoint=https://akcoinvalue.table.core.windows.net/;FileEndpoint=https://akcoinvalue.file.core.windows.net/;";
+        public const string ConnectionString = "CONNECTION STRING HERE";
         public const string TableName = "coins";
 
         [FunctionName("CoinValueSaver")]
+        // Updates every 5 minutes
         public static async System.Threading.Tasks.Task Run([TimerTrigger("*/5 * * * * *")]TimerInfo myTimer, TraceWriter log)
         {
             log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
